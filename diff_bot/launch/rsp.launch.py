@@ -10,7 +10,7 @@ import xacro
 def generate_launch_description():
 
     ####### DATA INPUT ##########
-    urdf_file_name = 'robot.urdf'
+    urdf_file_name = 'robot.urdf.xacro'
     package_name= "diff_bot"
 
     ####### DATA INPUT END ##########
