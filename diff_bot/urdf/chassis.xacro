@@ -1,8 +1,7 @@
 <?xml version="1.0"?>
-
 <robot xmlns:xacro="http://www.ros.org/wiki/xacro">
 
-        <!-- Chassis Link -->
+    <!-- Chassis Link -->
     <link name="chassis_link">
         <visual>
             <geometry>
@@ -11,12 +10,14 @@
             <origin xyz="${chassis_length/2} 0.0 ${chassis_height/2}"/>
             <material name="green"/>
         </visual>
+
         <collision>
+            <geometry>
+                <box size="${chassis_length} ${chassis_width} ${chassis_height}"/>
+            </geometry>
             <origin xyz="${chassis_length/2} 0.0 ${chassis_height/2}"/>
         </collision>
-        <xacro:inertial_box mass="${chassis_mass}" x="${chassis_length}" y="${chassis_width}" z="${chassis_height}">
-            <origin xyz="${chassis_length/2} 0 ${chassis_height/2}" rpy="0 0 0"/>
-        </xacro:inertial_box>
+
     </link> 
 
     <!-- Chassis joint -->
@@ -29,7 +30,5 @@
     <gazebo reference="chassis_link">
         <material> Gazebo/Grey </material>
     </gazebo>
-
-
 
 </robot>
